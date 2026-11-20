@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VNJAVA</title>
+    <link rel="icon" type="image/jpeg" href="/assets/vnjava_logo.jpg" />
+    <script>
+      window.addEventListener('error', function(e) {
+        if (e.message && e.message.toLowerCase().includes('missing ) after argument list')) {
+          console.warn('Handled external syntax error:', e.message);
+          e.preventDefault();
+          e.stopPropagation();
+          return true;
+        }
+      }, true);
+      window.onerror = function(msg) {
+        if (typeof msg === 'string' && msg.toLowerCase().includes('missing ) after argument list')) {
+          return true;
+        }
+      };
+    </script>
+    <meta name="description" content="VNJAVA - Next-Gen Social, Music, Community &amp; Instant Messaging Platform." />
+    <meta property="og:title" content="VNJAVA" />
+    <meta property="og:description" content="VNJAVA - Next-Gen Social, Music, Community &amp; Instant Messaging Platform." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;1,700;1,800&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+      html, body, #root, * {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+        -webkit-touch-callout: none !important;
+      }
+      input:not([readonly]):not([disabled]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="color"]),
+      textarea:not([readonly]):not([disabled]) {
+        -webkit-user-select: text !important;
+        user-select: text !important;
+        -webkit-touch-callout: none !important;
+      }
+    </style>
+  </head>
+  <body class="select-none">
+    <div id="root" class="select-none"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
